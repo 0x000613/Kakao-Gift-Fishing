@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react'
 
-const KakaoShareButton = ({ thumbnail_URL, buttonID, giftName}) => {
+const KakaoShareButton = ({ thumbnail_URL, buttonID, giftName, fishingRedirectURL='https://kakao-gift-fishing.vercel.app/fishing'}) => {
   useEffect(() => {
     createKakaoButton()
   })
 
   const createKakaoButton = () => {
-    console.log('init')
     // kakao sdk script이 정상적으로 불러와졌으면 window.Kakao로 접근이 가능합니다
     if (window.Kakao) {
       const kakao = window.Kakao
@@ -19,22 +18,22 @@ const KakaoShareButton = ({ thumbnail_URL, buttonID, giftName}) => {
 
       kakao.Link.createDefaultButton({
         // Render 부분 id=kakao-link-btn 을 찾아 그부분에 렌더링을 합니다
-        container: '#core',
+        container: '#' + buttonID,
         objectType: 'feed',
         content: {
           title: '선물과 메세지를 보냈습니다.',
           imageUrl: thumbnail_URL , // i.e. process.env.FETCH_URL + '/logo.png'
           link: {
-            mobileWebUrl: window.location.href,
-            webUrl: window.location.href,
+            mobileWebUrl: fishingRedirectURL,
+            webUrl: fishingRedirectURL,
           },
         },
         buttons: [
           {
             title: '선물함으로 가기',
             link: {
-              mobileWebUrl: window.location.href,
-              webUrl: window.location.href,
+              mobileWebUrl: fishingRedirectURL,
+              webUrl: fishingRedirectURL,
             },
           }
         ],
@@ -45,7 +44,7 @@ const KakaoShareButton = ({ thumbnail_URL, buttonID, giftName}) => {
   return (
     <div className="kakao-share-button">
       {/* Kakao share button */}
-      <button id='core'>{ giftName }</button>
+      <button id={ buttonID }>{ giftName }</button>
     </div>
   )
 }
