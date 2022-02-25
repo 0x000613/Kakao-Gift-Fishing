@@ -1,6 +1,6 @@
 // Modules
 import React from 'react'
-import { Link, Routes, Route } from 'react-router-dom';
+import { Link, Routes, Route, useLocation } from 'react-router-dom';
 
 // Pages
 import All from './Pages/All';
@@ -9,14 +9,19 @@ import Coffee from './Pages/Coffee';
 import MapleStory from './Pages/MapleStory';
 
 const App = () => {
+  console.log(useLocation().pathname)
   return (
     <div className="App">
       {/* Top Navigation */}
-      <nav>
-        <Link to='/'>All</Link>
-        <Link to='/coffee'>Coffee</Link>
-        <Link to='/maplestory'>MapleStory</Link>
-      </nav>
+      {
+        // 현재 사용자의 경로가 '/fishing'이 아닐 경우에만 Navigation을 노출
+        useLocation().pathname !== '/fishing' &&
+        <nav>
+          <Link to='/'>All</Link>
+          <Link to='/coffee'>Coffee</Link>
+          <Link to='/maplestory'>MapleStory</Link>
+        </nav>
+      }
 
       {/* Router */}
       <Routes>
