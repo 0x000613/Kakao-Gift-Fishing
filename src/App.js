@@ -25,7 +25,8 @@ const App = () => {
         <nav className="navigation-container">
           <Link to='/' className="navigation-item">전체</Link>
           <Link to='/coffee' className="navigation-item">커피</Link>
-          <Link to='/game' className="navigation-item">메이플</Link>
+          <Link to='/food' className="navigation-item">음식</Link>
+          <Link to='/game' className="navigation-item">게임/상품권</Link>
         </nav>
       }
 
