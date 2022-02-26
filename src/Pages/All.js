@@ -1,15 +1,15 @@
 import React from 'react';
 
-import MapleStory from './MapleStory';
+import Game from './Game';
 import Coffee from './Coffee';
 
 const All = () => {
     return (
         <div className='main-contents-container'>
-            <h3 className="category-title">Coffee</h3>
+            <h3 className="category-title">커피</h3>
             <Coffee />
-            <h3 className="category-title">MapleStory</h3>
-            <MapleStory />
+            <h3 className="category-title">게임/상품권</h3>
+            <Game />
         </div>
     );
 };

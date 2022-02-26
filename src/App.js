@@ -6,7 +6,7 @@ import { Link, Routes, Route, useLocation } from 'react-router-dom';
 import All from './Pages/All';
 import Fishing from './Pages/Fishing'
 import Coffee from './Pages/Coffee';
-import MapleStory from './Pages/MapleStory';
+import MapleStory from './Pages/Game';
 
 // Styles
 import './CSS/Reset.css'
@@ -25,7 +25,7 @@ const App = () => {
         <nav className="navigation-container">
           <Link to='/' className="navigation-item">전체</Link>
           <Link to='/coffee' className="navigation-item">커피</Link>
-          <Link to='/maplestory' className="navigation-item">메이플</Link>
+          <Link to='/game' className="navigation-item">메이플</Link>
         </nav>
       }
 
@@ -34,7 +34,7 @@ const App = () => {
         <Route path='/' element={<All />} exact={true} />
         <Route path='/fishing' element={<Fishing />} />
         <Route path='/coffee' element={<Coffee />} />
-        <Route path='/maplestory' element={<MapleStory />} />
+        <Route path='/game' element={<MapleStory />} />
       </Routes>
     </div>
   )
