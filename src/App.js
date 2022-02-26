@@ -6,7 +6,8 @@ import { Link, Routes, Route, useLocation } from 'react-router-dom';
 import All from './Pages/All';
 import Fishing from './Pages/Fishing'
 import Coffee from './Pages/Coffee';
-import MapleStory from './Pages/Game';
+import Game from './Pages/Game';
+import Food from './Pages/Food';
 
 // Styles
 import './CSS/Reset.css'
@@ -35,7 +36,8 @@ const App = () => {
         <Route path='/' element={<All />} exact={true} />
         <Route path='/fishing' element={<Fishing />} />
         <Route path='/coffee' element={<Coffee />} />
-        <Route path='/game' element={<MapleStory />} />
+        <Route path='/game' element={<Game />} />
+        <Route path='/food' element={<Food />} />
       </Routes>
     </div>
   )
