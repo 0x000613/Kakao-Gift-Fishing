@@ -8,22 +8,28 @@ import Fishing from './Pages/Fishing'
 import Coffee from './Pages/Coffee';
 import MapleStory from './Pages/MapleStory';
 
+// Styles
+import './CSS/Reset.css'
+import './CSS/Common.css'
+import './CSS/Main.css'
+import './CSS/Layout.css'
+
 const App = () => {
-  console.log(useLocation().pathname)
   return (
     <div className="App">
       {/* Top Navigation */}
+      <h1 className='navigation-title'>카카오톡 낚시</h1>
       {
         // 현재 사용자의 경로가 '/fishing'이 아닐 경우에만 Navigation을 노출
         useLocation().pathname !== '/fishing' &&
-        <nav>
-          <Link to='/'>All</Link>
-          <Link to='/coffee'>Coffee</Link>
-          <Link to='/maplestory'>MapleStory</Link>
+        <nav className="navigation-container">
+          <Link to='/' className="navigation-item">전체</Link>
+          <Link to='/coffee' className="navigation-item">커피</Link>
+          <Link to='/maplestory' className="navigation-item">메이플</Link>
         </nav>
       }
 
-      {/* Router */}
+      {/* Router Setting */}
       <Routes>
         <Route path='/' element={<All />} exact={true} />
         <Route path='/fishing' element={<Fishing />} />

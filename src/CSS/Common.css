@@ -1,0 +1,22 @@
+/* Color */
+:root {
+    --primary: #f76b8a;
+    --blue100: #c7ddff;
+    --blue200: #006ca9;
+    --blue300: #0066ff;
+    --yellow: #ffff00;
+    --orange100: #ffa048;
+    --white: #ffffff;
+    --black: #000000;
+    --gray100: #eeeeee;
+    --gray200: #e1e1e1;
+    --gray300: #c4c4c4;
+    --gray400: #a3a3a3;
+    --gray500: #808080;
+    --gray600: #494949;
+}
+
+a {
+    text-decoration: none;
+    color: var(--black);
+}
